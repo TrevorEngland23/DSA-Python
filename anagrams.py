@@ -65,7 +65,7 @@ def are_anagrams3(s1, s2):
         return False
 
     return sorted(s1) == sorted(s2)
-
+ 
 print(are_anagrams3(t_string1, t_string2))
 print(are_anagrams3(t_string1, t_string4))
 

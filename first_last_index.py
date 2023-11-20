@@ -14,7 +14,7 @@ def first_last_index(arr, target):
     return [-1, -1] # if the for loop ends without returning the result, then target was never in the arr of integers
 
 # time complexity O(n), space complexity o(1). Solution uses linear search
-# since the array is sorted, we could use binary search...
+# since the array is sorted, we could use binary search... 
 
 def find_start(arr, target):
     if arr[0] == target:

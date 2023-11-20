@@ -30,4 +30,4 @@ def kth_largest2(arr, k):
 
 # optimized solution 2
 
-# priority queue
+# priority queues
