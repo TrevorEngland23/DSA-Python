@@ -1,3 +1,5 @@
+import heapq
+
 # given an array of integers "arr" and an integer "k", find the kth largest element 
 
 # example:
@@ -30,4 +32,19 @@ def kth_largest2(arr, k):
 
 # optimized solution 2
 
-# priority queues
+# priority queues ...
+# next element to be popped in the queue is not the one that first entered, but the one with highest priority
+# import heapq - by defualt heapq finds the min heap, we want the max heap.. multiply values by -1 to reverse that order so we get max heap
+def kth_largest3(arr, k):
+    # build an arr that negates the original sign of the element. This is to transform the list into a max heap, so that the largest element is at the root, rather than the smallest element
+    arr = [-element for element in arr]
+    # turn the arr into a heap
+    heapq.heapify(arr)
+    # iterate through
+    for i in range(k-1): # so.. if k is 4, you do the below operation 3 times, leaving the kth largest element in the heap
+        # delete the smallest value found in the heap (in this case, the largest negative number)
+        heapq.heappop(arr) 
+    return -heapq.heapop(arr) # extract the value one more time, which is the kth largest element. reverse the sign back to the original sign, and return that value.
+
+# time complexity of O(n klogn) space complexity of O(n)
+
