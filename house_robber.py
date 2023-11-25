@@ -13,4 +13,11 @@ from typing import List
 
 class Solution:
     def rob(self, nums: List[int]) -> int:
-       pass
+       rob_house1 = 0 # first house robbed
+       rob_house2 = 0 # next house robbed
+
+       for n in nums: # for numbers in nums
+           tmp = max(n + rob_house1, rob_house2) # ...? revisit later. stuck on understanding the logic behind this.
+           rob_house1 = rob_house2 # update the state. now THAT house is considered 2 houses ago
+           rob_house2 = tmp # THIS house is considered the last house robbed
+       return rob_house2 # at the end, the total number will be rob_house2.
