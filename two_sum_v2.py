@@ -1,5 +1,8 @@
 # if the list is sorted, you can use two pointers. T(n) = O(n) at worst, S(n) = O(1), which improves from the hashmap method of O(n). Note that the list has to be sorted in order to use this approach
 
+from typing import List
+
+
 class Solution:
     def two_sum(self, nums: List[int], target: int) -> List[int]:
         p1 = 0 # create the first (left) pointer
