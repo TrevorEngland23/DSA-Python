@@ -70,7 +70,7 @@ def find_end(arr, target):
             left = mid-1
     return -1
 
-def first_and_last2(arr, target): # time complexity here is O(n log n), space complexity O(1), since we are only using int variables, so this solution is very fast
+def first_and_last2(arr, target): # time complexity here is O(n log n), space complexity O(1), since we are only using int variables
     if len(arr) == 0 or arr[0] > target or arr[-1] < target:
         return [-1, -1]
     start = find_start(arr, target)
