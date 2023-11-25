@@ -6,7 +6,7 @@ def are_anagrams(s1, s2):
     # check to see if the strings are same length. if not, they won't have same number of characters, so they won't be anagrams regardless. 
     if len(s1) != len(s2):
         return False
-    # create dictionaries to store character and count
+    # create hashmap to store character and count
     freq1 = {}
     freq2 = {}
     # loop through the first string
