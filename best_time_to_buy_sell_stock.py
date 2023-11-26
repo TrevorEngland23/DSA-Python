@@ -10,22 +10,22 @@
 
 # We can use the two pointers solution to account for time and solve this problem, T(n) = O(n), S(n): O(1)
 
-def maxProfit(prices):
+def max_profit(prices):
     l,r = 0, 1 # create two pointers (left = buy and right = sell) and initialize the left to 0 and right to 1
 
-    maxProfit = 0 # originally, the profit is 0 because no transaction has been made
+    max_profit = 0 # originally, the profit is 0 because no transaction has been made
     while r < len(prices): # while the the pointer has not passed the last value in list 
         if prices[l] < prices[r]: # if the transaction would be profitable... if the buying price is less than the selling price
             profit = prices[r] - prices[l] # math to find the calculated profit
-            maxProfit = max(maxProfit, profit) # compares the maxProfit value and the profit from the current potential transacation. If the profit is greater than the current max profit, then the max profit is now equal to the profit.
+            max_profit = max(max_profit, profit) # compares the maxProfit value and the profit from the current potential transacation. If the profit is greater than the current max profit, then the max profit is now equal to the profit.
         else:
             l = r # if we found a value that is less than the current left pointer, move the left pointer to where the right pointer is
         r += 1 # regardless of what happens, the right pointer continues to increment by one to traverse the list, making this operation an O(n) operation.
 
-    return maxProfit # return the maxProfit found
+    return max_profit # return the maxProfit found
 
 
 # TEST 
 
-print(maxProfit([9,5,1,2,1,5,8,5])) # 7
-print(maxProfit([10000000000, 1, 0, 1, 0, 99])) # 99
+print(max_profit([9,5,1,2,1,5,8,5])) # 7
+print(max_profit([10000000000, 1, 0, 1, 0, 99])) # 99
